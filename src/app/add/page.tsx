@@ -2,6 +2,8 @@ import { revalidatePath } from 'next/cache'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
+import DollarButton from '@/app/add/components/DollarButton'
+import InflationButton from '@/app/add/components/InflationButton'
 import { prisma } from '@/db'
 
 async function createSalary(data: FormData) {
@@ -99,9 +101,10 @@ export default async function Add() {
         <div className="flex flex-col gap-1">
           <label
             htmlFor="dollar"
-            className="text-slate-100 hover:cursor-pointer"
+            className="flex items-center justify-between text-slate-100 hover:cursor-pointer"
           >
-            Valor del dollar
+            <span>Valor del Dollar</span>
+            <DollarButton />
           </label>
           <input
             id="dollar"
@@ -114,9 +117,10 @@ export default async function Add() {
         <div className="flex flex-col gap-1">
           <label
             htmlFor="dollar"
-            className="text-slate-100 hover:cursor-pointer"
+            className="flex items-center justify-between text-slate-100 hover:cursor-pointer"
           >
-            Valor de la inflación
+            <span>Valor de la inflación</span>
+            <InflationButton />
           </label>
           <input
             id="inflation"
