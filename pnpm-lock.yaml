@@ -29,6 +29,9 @@ specifiers:
   lint-staged: ^13.2.2
   lucide-react: ^0.221.0
   next: 13.4.4
+  playwright: ^1.34.3
+  playwright-aws-lambda: ^0.10.0
+  playwright-core: ^1.34.3
   postcss: 8.4.23
   prettier: ^2.8.8
   prettier-plugin-tailwindcss: ^0.2.8
@@ -53,6 +56,9 @@ dependencies:
   eslint-config-next: 13.4.4_opaykosi7ysrbskpnffskmbrki
   lucide-react: 0.221.0_react@18.2.0
   next: 13.4.4_biqbaboplfbrettd7655fr4n2y
+  playwright: 1.34.3
+  playwright-aws-lambda: 0.10.0_playwright-core@1.34.3
+  playwright-core: 1.34.3
   postcss: 8.4.23
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2644,6 +2650,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /lambdafs/2.1.1:
+    resolution: {integrity: sha512-x5k8JcoJWkWLvCVBzrl4pzvkEHSgSBqFjg3Dpsc4AcTMq7oUMym4cL/gRTZ6VM4mUMY+M0dIbQ+V1c1tsqqanQ==}
+    engines: {node: '>= 10.16'}
+    hasBin: true
+    dev: false
+    bundledDependencies:
+      - tar-fs
+
   /language-subtag-registry/0.3.22:
     resolution: {integrity: sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==}
     dev: false
@@ -3184,6 +3198,31 @@ packages:
   /pirates/4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
+    dev: false
+
+  /playwright-aws-lambda/0.10.0_playwright-core@1.34.3:
+    resolution: {integrity: sha512-osGbx0Nwco6E9JZK/2Uq3lrQ5rmjLEQ9Iw0286wQZ93s+8Ok8IwOmzP765JGTRDvjd/5woE5qwICnhw9iPisOQ==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      playwright-core: ^1
+    dependencies:
+      lambdafs: 2.1.1
+      playwright-core: 1.34.3
+    dev: false
+
+  /playwright-core/1.34.3:
+    resolution: {integrity: sha512-2pWd6G7OHKemc5x1r1rp8aQcpvDh7goMBZlJv6Co5vCNLVcQJdhxRL09SGaY6HcyHH9aT4tiynZabMofVasBYw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: false
+
+  /playwright/1.34.3:
+    resolution: {integrity: sha512-UOOVE4ZbGfGkP1KVqWTdXOmm8Pw2pBhfbmlqKMkpiRCQjL5W+J+xRQXpgutFr0iM4pWl8g0GyyASMsqjQfFohw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.34.3
     dev: false
 
   /postcss-import/15.1.0_postcss@8.4.23:
