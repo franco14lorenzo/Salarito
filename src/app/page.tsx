@@ -9,7 +9,10 @@ const getSalaries = async () => {
     }
   })
 
-  return salaries
+  return salaries.map((salary, index, array) => ({
+    ...salary,
+    number: array.length - index
+  }))
 }
 
 export default async function Home() {

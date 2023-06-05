@@ -3,7 +3,18 @@
 import { Salary } from '@prisma/client'
 import { ColumnDef } from '@tanstack/react-table'
 
-export const columns: ColumnDef<Salary>[] = [
+type SalaryWithNumber = Salary & { number: number }
+
+export const columns: ColumnDef<SalaryWithNumber>[] = [
+  {
+    accessorKey: 'number',
+    header: '#',
+    cell: ({ row }) => {
+      const number = row.original.number
+
+      return <span className="">{number}</span>
+    }
+  },
   {
     accessorKey: 'month',
     header: 'Mes',
