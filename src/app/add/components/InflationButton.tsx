@@ -22,6 +22,13 @@ const InflationButton = () => {
 
     const json = await res.json()
 
+    if (!json.data) {
+      // TODO: Change this to a more specific error
+      alert('No hay datos para la fecha ingresada')
+      setLoading(false)
+      return
+    }
+
     const inflation = json.data.v
     const inflationInput = document.getElementById(
       'inflation'
